@@ -1,0 +1,5 @@
+#Iniciando Projeto
+- yarn create next-app (nome-app)
+
+#Adding Typescript
+- yarn add typescript @types/react @types/node -D
