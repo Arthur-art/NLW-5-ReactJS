@@ -6,3 +6,6 @@
 
 #Adicionando sass
 - yarn add sass
+
+#Adicionando lib date-fns para lidar com datas dentro do JS
+- yarn add date-fns
