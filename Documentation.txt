@@ -9,3 +9,9 @@
 
 #Adicionando lib date-fns para lidar com datas dentro do JS
 - yarn add date-fns
+
+#Criando pasta Header para receber todos os components do Header da aplicação
+
+#Adicionando Header ao arquivo _app.tsx pois header irá aparecer em todas as pages da aplicação
+
+#Configurando css do arquivo _app para deixar o header flexivel para receber o component Player ao lado
