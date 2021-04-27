@@ -14,4 +14,19 @@
 
 #Adicionando Header ao arquivo _app.tsx pois header irá aparecer em todas as pages da aplicação
 
-#Configurando css do arquivo _app para deixar o header flexivel para receber o component Player ao lado
+#Configurando css do arquivo _app para deixar o header flexivel para receber o component Player ao lado]
+
+#Instalando JsonServer para simular uma api
+- yarn add json-server -D
+- criando server.json na raiz do projeto
+- atualize o package.json (
+     
+    "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "server": "json-server server.json -w -d 750 -p 3333"
+  },
+)
+- yarn server
+- localhost:3333/episodes
