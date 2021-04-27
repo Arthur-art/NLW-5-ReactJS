@@ -1,21 +1,23 @@
-export default function Home(props) {
+export default function Home({ episode }) {
 
-  console.log(props.episodes)
+
 
   return (
     <>
-      <h1>fetch</h1>
+      <p>{JSON.stringify(episode)}</p>
     </>
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await fetch('http://localhost:3333/episodes');
   const data = await response.json()
 
   return {
     props: {
-      episodes: data,
-    }
+      episode: data
+    },
+    //a cada 8 horas ira gerar uma nova versão desta pagina
+    revalidate: 60 * 60 * 8,
   }
 }
