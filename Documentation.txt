@@ -114,5 +114,7 @@ export const api = axios.create({
 
     revalidate: 60 * 60 * 8,
   }
-  
+
 )
+
+#Formatando os dados logo depois de feita a requisição no servidor para melhorar a performance

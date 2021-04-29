@@ -4,6 +4,7 @@ type Episode = {
   id: string;
   title: string;
   members: string;
+  published_at: string;
 }
 
 type HomeProps = {
@@ -26,6 +27,8 @@ export const getStaticProps: GetStaticProps = async () => {
       _order: 'desc'
     }
   });
+
+
 
   return {
     props: {
