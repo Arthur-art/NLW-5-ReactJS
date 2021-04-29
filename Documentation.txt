@@ -4,6 +4,10 @@
 #Adicionando Typescript
 - yarn add typescript @types/react @types/node -D
 
+#Executando em produção
+- yarn build
+- yarn start
+
 #Adicionando sass
 - yarn add sass
 
@@ -80,10 +84,6 @@
 
         }
 }
-
-#Executando em produção
-- yarn build
-- yarn start
 
 #Adicionando axios
 - yarn add axios
