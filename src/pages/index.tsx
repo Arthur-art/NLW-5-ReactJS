@@ -12,9 +12,10 @@ type HomeProps = {
 }
 
 export default function Home(props: HomeProps) {
+
   return (
     <>
-      <p>{JSON.stringify(props.episodes)}</p>
+      <p>{props.episodes}</p>
     </>
   )
 }
@@ -28,11 +29,11 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   });
 
-
+  const dataObj = JSON.stringify(data)
 
   return {
     props: {
-      episodes: data
+      episodes: dataObj
     },
 
     revalidate: 60 * 60 * 8,
