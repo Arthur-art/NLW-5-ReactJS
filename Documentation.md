@@ -1,26 +1,26 @@
-#Iniciando Projeto
+# Iniciando Projeto
 - yarn create next-app (nome-app)
 
-#Adicionando Typescript
+# Adicionando Typescript
 - yarn add typescript @types/react @types/node -D
 
-#Executando em produção
+# Executando em produção
 - yarn build
 - yarn start
 
-#Adicionando sass
+# Adicionando sass
 - yarn add sass
 
-#Adicionando lib date-fns para lidar com datas dentro do JS
+# Adicionando lib date-fns para lidar com datas dentro do JS
 - yarn add date-fns
 
-#Criando pasta Header para receber todos os components do Header da aplicação
+# Criando pasta Header para receber todos os components do Header da aplicação
 
-#Adicionando Header ao arquivo _app.tsx pois header irá aparecer em todas as pages da aplicação
+# Adicionando Header ao arquivo _app.tsx pois header irá aparecer em todas as pages da aplicação
 
-#Configurando css do arquivo _app para deixar o header flexivel para receber o component Player ao lado]
+# Configurando css do arquivo _app para deixar o header flexivel para receber o component Player ao lado
 
-#Instalando JsonServer para simular uma api
+# Instalando JsonServer para simular uma api
 - yarn add json-server -D
 - criando server.json na raiz do projeto
 - atualize o package.json (
@@ -35,9 +35,9 @@
 - yarn server
 - localhost:3333/episodes
 
-##Maneiras de se consumir uma Api:
+# Maneiras de se consumir uma Api:
 
-#Modelo SPA(single page applications) usando useEffect:
+# Modelo SPA(single page applications) usando useEffect:
 
  useEffect(() => {
     fetch('http://localhost:3333/episodes').then((response) => {
@@ -49,7 +49,7 @@
   }, [])
 
 
-#Modelo SSR(server side redering), requisição feita na camada do next
+# Modelo SSR(server side redering), requisição feita na camada do next
 
 - Dentro de qualquer arquivo na pasta pages export uma function chamada (getServerSideProps)
      
@@ -65,7 +65,7 @@
 }
 
 
-#Modelo SSG(static site generators), requisição feita na camada do next
+# Modelo SSG(static site generators), requisição feita na camada do next
 
 - Dentro de qualquer arquivo na pasta pages export uma function chamada (getStaticProps)
      
@@ -85,7 +85,7 @@
         }
 }
 
-#Adicionando axios
+# Adicionando axios
 - yarn add axios
 - criando no src uma pasta services/api.ts(
 
@@ -117,4 +117,4 @@ export const api = axios.create({
 
 )
 
-#Formatando os dados logo depois de feita a requisição no servidor para melhorar a performance
+# Formatando os dados logo depois de feita a requisição no servidor para melhorar a performance
