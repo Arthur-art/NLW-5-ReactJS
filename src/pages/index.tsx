@@ -1,10 +1,19 @@
 import { GetStaticProps } from 'next'
+import { format, parseISO } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { api } from '../services/api'
+import { convertDurationToTimeString } from '../utils/convertDurationToTimeString'
+import { parse } from 'node:path'
 type Episode = {
   id: string;
   title: string;
+  thumbnail: string;
   members: string;
-  published_at: string;
+  publishedAt: string;
+  duration: number;
+  durationAsString: string;
+  description: string;
+  url: string;
 }
 
 type HomeProps = {
@@ -13,9 +22,10 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
 
+  console.log(props.episodes[0])
   return (
     <>
-      <p>{props.episodes}</p>
+
     </>
   )
 }
@@ -29,11 +39,24 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   });
 
-  const dataObj = JSON.stringify(data)
+  const episodes = data.map((episode) => {
+    return {
+      id: episode.id,
+      title: episode.title,
+      thumbnail: episode.thumbnail,
+      members: episode.members,
+      publishedAt: format(parseISO(episode.published_at), 'd MMM yy', { locale: ptBR }),
+      duration: convertDurationToTimeString(Number(episode.file.duration)),
+      description: episode.description,
+      url: episode.file.url
+
+    }
+  })
+
 
   return {
     props: {
-      episodes: dataObj
+      episodes
     },
 
     revalidate: 60 * 60 * 8,

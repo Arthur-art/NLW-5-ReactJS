@@ -96,7 +96,12 @@ export const api = axios.create({
 })
 
 )
-- Atualizando requisição SSG (
+
+- Atualizando requisição para a adição do typescript SSG (
+
+  
+  import { GetStaticProps } from 'next'
+
 
   export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get('episodes', {
