@@ -96,6 +96,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
           </table>
 
         </section>
+
       </div>
     </>
   )
