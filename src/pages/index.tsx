@@ -29,6 +29,10 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
+  allEpisodes.map((...value) => {
+    console.log(value)
+  })
+
   console.log(latestEpisodes)
   return (
     <>
