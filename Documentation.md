@@ -8,6 +8,10 @@
 - yarn build
 - yarn start
 
+# Executando server e modo dev
+- yarn dev
+- yarn server
+
 # Adicionando sass
 - yarn add sass
 
