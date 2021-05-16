@@ -6,6 +6,7 @@ import { format, parseISO } from 'date-fns';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 import ptBR from 'date-fns/locale/pt-BR';
 import styles from './episode.module.scss'
+import Link from 'next/link';
 
 type Episode = {
     id: string;
@@ -30,9 +31,11 @@ export default function Episodes({ episode }: EpisodeProps) {
     return (
         <div className={styles.episodes}>
             <div className={styles.thumbnailContainer}>
-                <button type="button">
-                    <img src="/arrow-left.svg" alt="Voltar" />
-                </button>
+                <Link href={'/'}>
+                    <button type="button">
+                        <img src="/arrow-left.svg" alt="Voltar" />
+                    </button>
+                </Link>
                 <Image width={700} height={160} src={episode.thumbnail} objectFit="cover" />
                 <button type="button">
                     <img src="/play.svg" alt="Tocar episodio" />
@@ -55,7 +58,13 @@ export default function Episodes({ episode }: EpisodeProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: [],
+        paths: [
+            {
+                params: {
+                    slug: 'a-importancia-da-contribuicao-em-open-source'
+                }
+            }
+        ],
         fallback: 'blocking'
     }
 }
